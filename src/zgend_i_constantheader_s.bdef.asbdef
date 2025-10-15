@@ -1,0 +1,137 @@
+managed with additional save implementation in class ZCLGEN_BI_CONSTANTHEADER_S unique;
+strict;
+with draft;
+
+define behavior for ZGEND_I_CONSTANTHEADER_S alias ConstantHeaderAll
+draft table zgenccd_hdr_d_s
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master ( global )
+
+{
+  field ( readonly )
+  SingletonID;
+
+  field ( notrigger )
+  SingletonID,
+  HideTransport,
+  LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _ConstantHeader { create ( features : instance, authorization : none );  with draft; }
+}
+
+define behavior for ZGEND_I_CONSTANTHEADER alias ConstantHeader
+persistent table zgenccd_hdr
+draft table zgenccd_hdr_d
+etag master LocalLastChangedAt
+lock dependent by _ConstantHeaderAll
+authorization dependent by _ConstantHeaderAll
+
+{
+//  field ( mandatory : create )
+//  ConstantName,
+//  Description;
+
+  field ( readonly )
+  SingletonID,
+  CreatedBy,
+  CreatedAt,
+  ChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+  field ( readonly : update )
+  ConstantName;
+
+  field ( notrigger )
+  SingletonID,
+  CreatedBy,
+  CreatedAt,
+  ChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+
+  update ( features : global );
+  delete ( features : global );
+
+  factory action ( features : instance ) CopyConstantHeader parameter ZGEND_CopyCCDHeaderDataP [1];
+
+  mapping for zgenccd_hdr
+    {
+      ConstantName       = NAME;
+      CreatedBy          = ERUSER;
+      CreatedAt          = Created_at;
+      ChangedBy          = AEUSER;
+      LastChangedAt      = LAST_CHANGED_AT;
+      LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+      Description        = Description;
+      Comments           = COMMENTS;
+    }
+
+  association _ConstantHeaderAll { with draft; }
+  association _ConstantItem { create ( features : global ); with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}
+
+define behavior for ZGEND_I_CONSTANTITEM alias ConstantItem
+persistent table zgenccd_itm
+draft table zgen_ccd_itm_d
+lock dependent by _ConstantHeaderAll
+authorization dependent by _ConstantHeaderAll
+early numbering
+
+{
+
+  field ( mandatory )
+  Sign,
+  CompOption;
+
+  field ( readonly )
+  ConstantName,
+  Itemkey,
+  SingletonID;
+
+  field ( notrigger )
+  SingletonID;
+
+
+  update ( features : global );
+  delete ( features : global );
+
+  mapping for zgenccd_itm
+    {
+      ConstantName        = NAME;
+      ItemKey             = Sequence;
+      Sign                = Sign;
+      CompOption          = opti;
+      ComparisonOperator1 = Coop1;
+      ComparisonOperator2 = Coop2;
+      ComparisonOperator3 = Coop3;
+      ComparisonOperator4 = Coop4;
+      ComparisonOperator5 = Coop5;
+      LowValue            = Low;
+      HighValue           = High;
+      DeletionIndicator   = Loekz;
+    }
+
+  association _ConstantHeaderAll { with draft; }
+  association _ConstantHeader { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+  validation ValidateNotes on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+  determination SetDefaultSignOption on modify { field ItemKey; create; }
+}

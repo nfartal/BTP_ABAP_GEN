@@ -1,0 +1,5 @@
+@MappingRole: true
+define role ZGEND_I_GENE013VALUEMAPPING {
+  grant select on ZGEND_I_VALUEMAPPINGALL
+  where ( ) = ASPECT pfcg_auth ( 'S_TABU_NAM', ACTVT = '03', TABLE = 'ZGEND_I_VALUEMAPPINGALL' );
+}

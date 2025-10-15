@@ -1,0 +1,11 @@
+@EndUserText.label: 'CI Value Mapping Access control'
+@MappingRole: true
+define role ZGENC_I_GET_CIVALUEMAPPING {
+    grant 
+        select
+            on
+               ZGEND_I_GET_CIVALUEMAPPING
+                    where
+                        (sendersystem, receiversystem, dataobject, Inputdataobject ) = aspect pfcg_auth(ZVALUEMAP, ZSENDERSY, ZRECEIVESY, ZDATAOBJ, ZINPUTDOBJ, ACTVT = '03' );
+                        
+}

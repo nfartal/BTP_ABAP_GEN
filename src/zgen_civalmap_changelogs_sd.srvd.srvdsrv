@@ -1,0 +1,6 @@
+@EndUserText: {label: 'Service Definition for ZGEND_C_CIVALMAP_CHANGELOGS'}
+@ObjectModel: {leadingEntity: {name: 'ZGEND_C_CIVALMAP_CHANGELOGS'}}
+define service ZGEN_CIVALMAP_CHANGELOGS_SD
+  provider contracts odata_v4_webapi {
+  expose ZGEND_C_CIVALMAP_CHANGELOGS as UpdateChangeLogs;
+}

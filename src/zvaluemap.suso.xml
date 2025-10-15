@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>ZVALUEMAP</OBJCT>
+    <FIEL1>ACTVT</FIEL1>
+    <FIEL2>ZSENDERSY</FIEL2>
+    <FIEL3>ZRECEIVESY</FIEL3>
+    <FIEL4>ZDATAOBJ</FIEL4>
+    <FIEL5>ZINPUTDOBJ</FIEL5>
+    <OCLSS>CPAE</OCLSS>
+   </TOBJ>
+   <TOBJ_ATTR>
+    <OBJCT>ZVALUEMAP</OBJCT>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </TOBJ_ATTR>
+   <TOBJT>
+    <LANGU>E</LANGU>
+    <OBJECT>ZVALUEMAP</OBJECT>
+    <TTEXT>Value mapping object authorizations</TTEXT>
+   </TOBJT>
+   <TACTZ>
+    <TACTZ>
+     <BROBJ>ZVALUEMAP</BROBJ>
+     <ACTVT>01</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>ZVALUEMAP</BROBJ>
+     <ACTVT>02</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>ZVALUEMAP</BROBJ>
+     <ACTVT>03</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>ZVALUEMAP</BROBJ>
+     <ACTVT>06</ACTVT>
+    </TACTZ>
+   </TACTZ>
+  </asx:values>
+ </asx:abap>
+</abapGit>

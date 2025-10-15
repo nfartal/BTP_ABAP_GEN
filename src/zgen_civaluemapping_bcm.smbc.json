@@ -1,0 +1,36 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Value Mapping Object Definitions",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZGEN_UI_O4_CIVALUEMAP_SB",
+    "serviceName": "ZGEN_UI_O4_CIVALUEMAP_SB",
+    "serviceVersion": "0001",
+    "rootEntitySet": "GenE013ValueMappAll",
+    "name": "Value Mapping Object Definitions",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "GenE013ValueMappAll",
+        "variantManagement": "control",
+        "showTransportSelectionStrip": true
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "GenE013ValueMapping",
+        "selectionMode": "single",
+        "selectAll": true,
+        "rowCountMode": "auto",
+        "frozenColumnCount": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+@ObjectModel.leadingEntity.name: 'ZGEND_I_CONSTANTHEADER_S'
+define service ZGEN_CCD_SD {
+  expose ZGEND_I_CONSTANTHEADER_S as ConstantHeaderAll;
+  expose ZGEND_I_CONSTANTHEADER as ConstantHeader;
+  expose ZGEND_I_CONSTANTITEM as ConstantItem;
+}

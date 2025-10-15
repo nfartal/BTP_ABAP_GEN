@@ -1,0 +1,43 @@
+managed implementation in class zclgen_bi_civalmap_changelogs unique;
+strict ( 2 );
+define behavior for ZGEND_I_CIVALMAP_CHANGELOGS alias ZgendICivalmapChangelogs
+persistent table zgen_vmchangelog
+//etag master LastChangedAt
+lock master
+authorization master ( global )
+
+{
+  field ( mandatory : create )
+  Sendersystem,
+  Receiversystem,
+  Inputdataobject,
+  Dataobject;
+
+    field ( readonly )
+  //  CreatedBy,
+  //  CreatedAt,
+//    LastChangedBy,
+    LastChangedAt;
+
+  field ( readonly : update )
+  Sendersystem,
+  Receiversystem,
+  Inputdataobject,
+  Dataobject;
+
+  create;
+  update;
+  delete;
+
+  mapping for zgen_vmchangelog
+    {
+      Sendersystem    = sendersystem;
+      Receiversystem  = receiversystem;
+      Inputdataobject = inputdataobject;
+      Dataobject      = dataobject;
+      CreatedBy       = created_by;
+      CreatedAt       = created_at;
+      LastChangedBy   = last_changed_by;
+      LastChangedAt   = last_changed_at;
+    }
+}

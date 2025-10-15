@@ -1,0 +1,114 @@
+managed with additional save implementation in class ZCLGEN_BI_I_CIVALUEMAPPING_S unique;
+strict;
+with draft;
+define behavior for ZGEND_I_CIValueMapping alias GenE013ValueMappAll
+draft table zgenci_vm_d_s
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master ( global )
+
+{
+  field ( readonly )
+  SingletonID;
+
+  field ( features : instance )
+  TransportRequestID;
+
+  field ( notrigger )
+  SingletonID,
+  LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  action ( features : instance ) SelectCustomizingTransptReq parameter D_SelectCustomizingTransptReqP result [1] $self;
+
+  association _GenE013ValueMapping { create ( features : instance ); with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; }
+
+  side effects
+  {
+    action SelectCustomizingTransptReq affects $self;
+  }
+}
+
+define behavior for ZGEND_I_VALUEMAPPINGALL alias GenE013ValueMapping ##UNMAPPED_FIELD
+persistent table zgenci_valuemap
+draft table zgenci_valuem_d
+etag master LocalLastChangedAt
+lock dependent by _GenE013ValueMappAll
+authorization dependent by _GenE013ValueMappAll
+
+{
+  field ( mandatory : create )
+  Sendersystem,
+  Receiversystem,
+  Dataobject,
+  Inputdataobject;
+
+  field ( readonly )
+  SingletonID,
+  CreatedBy,
+  CreatedAt,
+  LocalLastChangedBy,
+  LocalLastChangedAt,
+  LastChangedAt;
+
+  field ( readonly : update )
+  Sendersystem,
+  Receiversystem,
+  Dataobject,
+  Inputdataobject;
+
+  field ( notrigger )
+  SingletonID,
+  CreatedBy,
+  CreatedAt,
+  LocalLastChangedBy,
+  LocalLastChangedAt,
+  LastChangedAt;
+
+
+  update ( features : global );
+  delete ( features : global );
+
+  factory action ( features : instance ) CopyGenE013ValueMapping parameter ZD_CopyGenE013ValueMappingP [1];
+
+  mapping for zgenci_valuemap
+    {
+      Sendersystem       = SENDERSYSTEM;
+      Receiversystem     = RECEIVERSYSTEM;
+      Dataobject         = DATAOBJECT;
+      Inputdataobject    = inputdataobject;
+      Civaluemappingid   = CIVALUEMAPPINGID;
+      Interfaceid        = INTERFACEID;
+      Inputfield1        = INPUTFIELD1;
+      Inputfield1length  = INPUTFIELD1LENGTH;
+      Inputfield2        = INPUTFIELD2;
+      Inputfield2length  = INPUTFIELD2LENGTH;
+      Inputfield3        = INPUTFIELD3;
+      Inputfield3length  = INPUTFIELD3LENGTH;
+      Inputfield4        = INPUTFIELD4;
+      Inputfield4length  = INPUTFIELD4LENGTH;
+      Outputfield        = OUTPUTFIELD;
+      Outputfieldlength  = OUTPUTFIELDLENGTH;
+      Comments           = COMMENTS;
+      CreatedBy          = CREATED_BY;
+      CreatedAt          = CREATED_AT;
+      LocalLastChangedBy = LOCAL_LAST_CHANGED_BY;
+      LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+      LastChangedAt      = LAST_CHANGED_AT;
+    }
+
+  association _GenE013ValueMappAll { with draft; }
+
+  validation ValidateTransportRequest on save ##NOT_ASSIGNED_TO_DETACT { create; update; delete; }
+}

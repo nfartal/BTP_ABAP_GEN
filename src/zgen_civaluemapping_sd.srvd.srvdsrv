@@ -1,0 +1,5 @@
+@ObjectModel.leadingEntity.name: 'ZGEND_I_CIValueMapping'
+define service ZGEN_CIVALUEMAPPING_SD {
+  expose ZGEND_I_CIValueMapping  as GenE013ValueMappAll;
+  expose ZGEND_I_VALUEMAPPINGALL as GenE013ValueMapping;
+}

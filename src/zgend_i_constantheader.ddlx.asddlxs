@@ -1,0 +1,91 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ConstantHeader', 
+    typeNamePlural: 'ConstantHeaders', 
+    title: {
+      type: #STANDARD, 
+      label: 'Constant Dashboard', 
+      value: 'ConstantName'
+    }
+  }
+}
+@Search.searchable: true
+annotate view ZGEND_I_CONSTANTHEADER with
+{
+  @UI.identification: [ {
+    position: 1 
+  } ]
+  @Search.defaultSearchElement: true
+  @UI.lineItem: [ {
+    position: 1 
+  }, 
+  {
+    type: #FOR_ACTION, 
+    dataAction: 'CopyConstantHeader', 
+    label: 'Copy Selected Entry', 
+    invocationGrouping: #CHANGE_SET
+  } ]
+  @UI.facet: [ {
+    id: 'ZGEND_I_CONSTANTHEADER', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'Constant Header Data', 
+    position: 1 
+  }, 
+  {
+    id: 'ZGEND_I_CONSTANTITEM', 
+    type: #LINEITEM_REFERENCE, 
+    label: 'Constant Item Data', 
+    position: 2 , 
+    targetElement: '_ConstantItem'
+  } ]
+  ConstantName;
+  
+  @UI.identification: [ {
+    position: 2 
+  } ]
+  @UI.lineItem: [ {
+    position: 2 
+  } ]
+  Description;
+
+@UI.identification: [ {
+    position: 3 
+  } ]
+  @UI.lineItem: [ {
+    position: 3 
+  } ]
+  CreatedBy;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  @UI.lineItem: [ {
+    position: 4 
+  } ]
+  CreatedAt;
+  
+  @UI.identification: [ {
+    position: 5
+  } ]
+  @UI.lineItem: [ {
+    position: 5 
+  } ]
+  ChangedBy;
+
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  @UI.lineItem: [ {
+    position: 6 
+  } ]
+  LastChangedAt;
+  
+  @EndUserText.label: 'Notes'
+  @UI.identification: [ {
+    position: 3 
+  } ]
+  @UI.multiLineText: true
+  Comments;
+}

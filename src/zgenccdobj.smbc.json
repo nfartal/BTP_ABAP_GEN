@@ -1,0 +1,40 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Configurable Constant Dashboard",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZGEN_UI_O4_CCD_SB",
+    "serviceName": "ZGEN_UI_O4_CCD_SB",
+    "serviceVersion": "0001",
+    "rootEntitySet": "ConstantHeaderAll",
+    "name": "Constant Header Data",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "ConstantHeaderAll",
+        "variantManagement": "control"
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "ConstantHeader",
+        "tableType": "gridTable",
+        "rowCountMode": "auto",
+        "creationModeName": "creationRow"
+      },
+      {
+        "entitySet": "ConstantItem",
+        "selectionMode": "auto",
+        "selectAll": true,
+        "rowCountMode": "auto"
+      }
+    ]
+  }
+}

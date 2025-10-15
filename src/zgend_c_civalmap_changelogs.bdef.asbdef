@@ -1,0 +1,10 @@
+projection implementation in class zclgen_bc_civalmap_changelogs unique;
+strict ( 2 );
+define behavior for ZGEND_C_CIVALMAP_CHANGELOGS alias ZgendCCivalmapChangelogs
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+}

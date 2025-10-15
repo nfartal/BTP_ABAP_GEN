@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SIA6" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SIA6>
+    <MAIN_OBJECT>
+     <NAME>ZGEN_AP_GETCIVALUEMAPPING_EXT</NAME>
+     <TYPE>SIA6</TYPE>
+     <DESCRIPTION>Get CI Value Mapping data</DESCRIPTION>
+     <RESPONSIBLE>CB9980000001</RESPONSIBLE>
+     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
+     <MASTER_SYSTEM>DA1</MASTER_SYSTEM>
+     <PACKAGE_REF>
+      <PACKAGE_NAME>ZGEN</PACKAGE_NAME>
+     </PACKAGE_REF>
+     <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
+    </MAIN_OBJECT>
+    <APP_ID>ZGEN_AP_GETCIVALUEMAPPING_EXT</APP_ID>
+    <APP_TYPE>EXT</APP_TYPE>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    <SERVICE>
+     <item>
+      <REL_NAME>ZGEN_AP_O4_CIVALUEMAPPING_SB</REL_NAME>
+      <REL_TYPE>G4BA</REL_TYPE>
+      <APP_ID>ZGEN_AP_GETCIVALUEMAPPING_EXT</APP_ID>
+      <SRVC_NAME>95E2F7D6E5106E736BB4D4847E8D91</SRVC_NAME>
+      <SRVC_TYPE>HT</SRVC_TYPE>
+      <TEXT>API to Get Value Mapping metadata</TEXT>
+      <TYPE_TEXT>OData V4</TYPE_TEXT>
+     </item>
+    </SERVICE>
+    <AUTH>
+     <item>
+      <AUTH_OBJECT>ZVALUEMAP</AUTH_OBJECT>
+      <STATUS>U</STATUS>
+      <TEXT>Value mapping object authorizations</TEXT>
+      <AUTH_ITEM>
+       <item>
+        <UUID>JvUUpxY6Hu+4wxedKlJzLQ==</UUID>
+        <AUTH_OBJECT>ZVALUEMAP</AUTH_OBJECT>
+        <AUTH_OBJECT_INSTANCE>0001</AUTH_OBJECT_INSTANCE>
+        <TEXT>Value mapping object authorizations</TEXT>
+        <STATUS>U</STATUS>
+        <VALUES>
+         <item>
+          <FIELD>ACTVT</FIELD>
+          <VALUE>Display</VALUE>
+          <VALUES>
+           <item>
+            <UUID>JvUUpxY6Hu+4wxedKlKTLQ==</UUID>
+            <LOW_VALUE>03</LOW_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>Activity</TEXT>
+          <STATUS>U</STATUS>
+          <IS_ACTVT>X</IS_ACTVT>
+         </item>
+         <item>
+          <FIELD>ZSENDERSY</FIELD>
+          <VALUE>*</VALUE>
+          <VALUES>
+           <item>
+            <UUID>JvUUpxY6Hu+4wxedKlMTLQ==</UUID>
+            <LOW_VALUE>*</LOW_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>Sender/Receiving system</TEXT>
+          <STATUS>U</STATUS>
+         </item>
+         <item>
+          <FIELD>ZRECEIVESY</FIELD>
+          <VALUE>*</VALUE>
+          <VALUES>
+           <item>
+            <UUID>JvUUpxY6Hu+4wxedKlLzLQ==</UUID>
+            <LOW_VALUE>*</LOW_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>Sender/Receiving system</TEXT>
+          <STATUS>U</STATUS>
+         </item>
+         <item>
+          <FIELD>ZDATAOBJ</FIELD>
+          <VALUE>*</VALUE>
+          <VALUES>
+           <item>
+            <UUID>JvUUpxY6Hu+4wxedKlLTLQ==</UUID>
+            <LOW_VALUE>*</LOW_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>Data object</TEXT>
+          <STATUS>U</STATUS>
+         </item>
+         <item>
+          <FIELD>ZINPUTDOBJ</FIELD>
+          <VALUE>*</VALUE>
+          <VALUES>
+           <item>
+            <UUID>JvUUpxY6Hu+4wxedKlKzLQ==</UUID>
+            <LOW_VALUE>*</LOW_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>Data object</TEXT>
+          <STATUS>U</STATUS>
+         </item>
+        </VALUES>
+       </item>
+      </AUTH_ITEM>
+     </item>
+    </AUTH>
+    <PUBLISH_STATUS>p</PUBLISH_STATUS>
+   </SIA6>
+  </asx:values>
+ </asx:abap>
+</abapGit>

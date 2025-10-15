@@ -1,0 +1,124 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'ConstantItem',
+    typeNamePlural: 'ConstantItems',
+    title: {
+      type: #STANDARD,
+      label: 'Constant Item Data',
+      value: 'ConstantName'
+    }
+  }
+}
+@Search.searchable: true
+annotate view ZGEND_I_CONSTANTITEM with
+{
+  @UI.identification: [ {
+    position: 1
+  } ]
+  @UI.lineItem: [ {
+    position: 1
+  } ]
+  @UI.facet: [ {
+    id: 'ZGEND_I_ConstantItem',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: 'Constant Item',
+    position: 1
+  } ]
+  ConstantName;
+
+  @EndUserText.label: 'Sign'
+  @UI.identification: [ {
+    position: 2
+  } ]
+  @UI.lineItem: [ {
+    position: 2
+  } ]
+  @Consumption.valueHelpDefinition: [{ entity: {name: 'ZGEND_I_Selopt_Sign', element: 'Sign' },
+  distinctValues: true }]
+  Sign;
+
+  @EndUserText.label: 'Option'
+  @UI.identification: [ {
+    position: 3 ,
+    label: 'Option'
+  } ]
+  @UI.lineItem: [ {
+    position: 3 ,
+    label: 'Option'
+  } ]
+  @Consumption.valueHelpDefinition: [{ entity: {name: 'ZGEND_I_Selopt_Option', element: 'CompOption' },
+  distinctValues: true }]
+  CompOption;
+
+  @EndUserText.label: 'Comparison Operator 1'
+  @UI.identification: [ {
+    position: 4
+  } ]
+  @Search.defaultSearchElement: true
+  @UI.lineItem: [ {
+    position: 4
+  } ]
+  ComparisonOperator1;
+
+  @EndUserText.label: 'Comparison Operator 2'
+  @UI.identification: [ {
+    position: 5
+  } ]
+  @UI.lineItem: [ {
+    position: 5
+  } ]
+  ComparisonOperator2;
+
+  @EndUserText.label: 'Comparison Operator 3'
+  @UI.identification: [ {
+    position: 6
+  } ]
+  @UI.lineItem: [ {
+    position: 6
+  } ]
+  ComparisonOperator3;
+
+  @EndUserText.label: 'Comparison Operator 4'
+  @UI.identification: [ {
+    position: 7
+  } ]
+  @UI.lineItem: [ {
+    position: 7
+  } ]
+  ComparisonOperator4;
+
+  @EndUserText.label: 'Comparison Operator 5'
+  @UI.identification: [ {
+    position: 8
+  } ]
+  @UI.lineItem: [ {
+    position: 8
+  } ]
+  ComparisonOperator5;
+
+  @EndUserText.label: 'Low Value'
+  @UI.identification: [ {
+    position: 9
+  } ]
+  @UI.lineItem: [ {
+    position: 9
+  } ]
+  LowValue;
+
+  @EndUserText.label: 'High Value'
+  @UI.identification: [ {
+    position: 10
+  } ]
+  @UI.lineItem: [ {
+    position: 10
+  } ]
+  HighValue;
+
+  @EndUserText.label: 'Deletion Indicator'
+  @UI.identification: [ {
+    position: 11
+  } ]
+  DeletionIndicator;
+}

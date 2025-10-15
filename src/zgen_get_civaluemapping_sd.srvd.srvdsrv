@@ -1,0 +1,4 @@
+@EndUserText.label: 'Get CI Value Mapping'
+define service ZGEN_GET_CIVALUEMAPPING_SD {
+  expose ZGEND_I_GET_CIVALUEMAPPING as GenE013ValueMapping;
+}

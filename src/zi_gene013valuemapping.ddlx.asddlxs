@@ -1,0 +1,163 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'GenE013ValueMapping',
+    typeNamePlural: 'GenE013ValueMappings',
+    title: {
+      type: #STANDARD,
+      label: 'Value Mapping for SAP BTP-CI',
+      value: 'Sendersystem'
+    }
+  }
+}
+annotate view ZGEND_I_VALUEMAPPINGALL with
+{
+  @UI.identification: [ {
+    position: 1
+  } ]
+  @UI.lineItem: [ {
+    position: 1
+  },
+  {
+    type: #FOR_ACTION,
+    dataAction: 'CopyGenE013ValueMapping',
+    label: 'Copy Selected Entry',
+    invocationGrouping: #CHANGE_SET
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_GenE013ValueMapping',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: 'GEN-E-013: Value Mapping for SAP BTP-CI',
+    position: 1
+  } ]
+  @EndUserText: {  label: 'Sender System' }
+  Sendersystem;
+
+  @UI.identification: [ {
+    position: 2
+  } ]
+  @UI.lineItem: [ {
+    position: 2
+  } ]
+  @EndUserText: {  label: 'Receiver System' }
+  Receiversystem;
+
+  @UI.identification: [ {
+    position: 3
+  } ]
+  @UI.lineItem: [ {
+    position: 3
+  } ]
+  @EndUserText: {  label: 'Input Data object' }
+  Inputdataobject;
+
+  @UI.identification: [ {
+    position: 4
+  } ]
+  @UI.lineItem: [ {
+    position: 4
+  } ]
+  @EndUserText: {  label: 'Data object' }
+  Dataobject;
+
+  @UI.identification: [ {
+    position: 5
+  } ]
+  @UI.lineItem: [ {
+    position: 5
+  } ]
+  @EndUserText: {  label: 'CI Valuemapping ID' }
+  Civaluemappingid;
+
+  @UI.identification: [ {
+    position: 6
+  } ]
+  @UI.lineItem: [ {
+    position: 6
+  } ]
+  @EndUserText: {  label: 'Interface ID' }
+  Interfaceid;
+
+  @UI.identification: [ {
+    position: 7
+  } ]
+  @UI.lineItem: [ {
+    position: 7
+  } ]
+  @EndUserText: {  label: 'Input field 1' }
+  Inputfield1;
+
+  @EndUserText.label : 'Input field 1 length'
+  @UI.identification: [ {
+    position: 8
+  } ]
+  @UI.lineItem: [ {
+    position: 8
+  } ]
+  Inputfield1length;
+
+  @EndUserText: {  label: 'Input field 2' }
+  @UI.identification: [ {
+    position: 9
+  } ]
+  @UI.lineItem: [ {
+    position: 9
+  } ]
+  Inputfield2;
+
+  @EndUserText.label : 'Input field 2 length'
+  @UI.identification: [ {
+    position: 10
+  } ]
+  @UI.lineItem: [ {
+    position: 10
+  } ]
+  Inputfield2length;
+
+  @EndUserText: {  label: 'Input field 3' }
+  @UI.identification: [ {
+    position: 11
+  } ]
+  @UI.lineItem: [ {
+    position: 11
+  } ]
+  Inputfield3;
+
+  @EndUserText.label : 'Input field 3 length'
+  @UI.identification: [ {
+    position: 12
+  } ]
+  Inputfield3length;
+
+  @EndUserText: {  label: 'Input field 4' }
+  @UI.identification: [ {
+    position: 13
+  } ]
+  Inputfield4;
+
+  @EndUserText.label : 'Input field 4 length'
+  @UI.identification: [ {
+    position: 14
+  } ]
+  Inputfield4length;
+
+  @EndUserText.label : 'Output'
+  @UI.identification: [ {
+    position: 15
+  } ]
+  Outputfield;
+
+  @EndUserText.label : 'Output length'
+  @UI.identification: [ {
+    position: 16
+  } ]
+  Outputfieldlength;
+
+  @UI.multiLineText: true
+  @UI.identification: [ {
+    position: 17 ,
+    label: 'Comments'
+  } ]
+  Comments;
+}
